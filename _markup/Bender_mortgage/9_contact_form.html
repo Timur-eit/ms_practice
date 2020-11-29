@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="9_contact_form.css">
+  <title>Проверьте контакты</title>
+</head>
+<body>
+  <div class="header">
+    <button class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+    </button>
+    <div class="header__logo">
+      <img class="header__image" src="logo.png" width="32" height="38" alt="логотипа Рога и Копыта">
+      <h1 class="header__title">Рога и Копыта</h1>
+    </div>
+  </div>
+  <div class="question">
+    Проверьте контакты
+  </div>
+  <div class="note">
+    <section>
+      Убедитесь, что контакты введены корректно, они будут использоваться банками для коммуникации с вами
+    </section>
+  </div>
+  <div class="general-input">
+    <label class="general-input__label" for="tel-input">Ваш телефон</label>
+    <div class="general-input__field">
+      <input class="general-input__field-input" name="tel" type="tel" id="tel-input" pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}" value="+7(952) ? 2122525" required>
+      <div class="general-input__field-line"></div>
+    </div>
+    <label class="general-input__label" for="email-input">Ваша почта</label>
+    <div class="general-input__field">
+      <input class="general-input__field-input" name="email" type="email" id="email-input" value="max@sinyakov.com" required>
+      <div class="general-input__field-line"></div>
+    </div>
+  </div>
+  <div class="contacts">
+    <div class="contacts__line"></div>    
+    <div class="checkboxes">
+      <label class="check modified">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        <div class="check__label">
+          <div class="chech__label__header">Согласие на кредитный отчет</div>
+        </div>
+      </label>
+      <label class="check modified">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        <div class="check__label">
+          <div class="chech__label__header">Согласие на рекламную     коммуникацию</div>
+        </div>
+      </label>
+      <label class="check modified">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        <div class="check__label">
+          <div class="chech__label__header">Согласие на хранение данных</div>
+        </div>
+      </label>
+      <label class="check modified">
+        <input class="check__input" type="checkbox" checked>
+        <span class="check__box"></span>
+        <div class="check__label">
+          <div class="chech__label__header">Нет родственников публичных лиц</div>
+        </div>
+      </label>
+      <label class="check confirmation">
+        <input class="check__input" type="checkbox" checked>
+        <span class="confirmation__box"></span>
+        <div class="check__label">
+          <div class="chech__label__header confirmation__label__header">Подтверждение по СМС</div>
+        </div>
+      </label>  
+    </div>
+  </div>
+  <nav class="navigation">
+    <a href="#" class="navigation__button navigation__button-back">Назад</a>
+    <a href="#" class="navigation__button navigation__button-forward red-edition">Отправить</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="5_monthly_income_style.css">
+  <title>Ваш ежемесячный доход</title>
+</head>
+<body>
+  <div class="header">
+    <button class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+    </button>
+    <div class="header__logo">
+      <img class="header__image" src="logo.png" width="32" height="38" alt="логотипа Рога и Копыта">
+      <h1 class="header__title">Рога и Копыта</h1>
+    </div>
+  </div>
+  <div class="question">
+    Ваш ежемесячный доход
+  </div>
+  <div class="note">
+    <section>
+      Средняя сумма, которую вы получаете “на руки” в месяц.
+    </section>
+  </div>
+  <form class="general-input">
+    <div class="general-input__label">
+      <label for="salary_value">Средний ежемесячный доход</label>
+    </div>
+    <div class="general-input__field">
+      <input class="general-input__field-input" type="number" name="salry" id="salary_value" placeholder="₽/мес">
+      <div class="general-input__field-line"></div>
+    </div>
+  </form>
+  <div class="income-confirmation">
+    <div>
+      <input class="income-confirmation__input" type="radio" name="income" id="ndfl"/>
+      <label class="income-confirmation__label" for="ndfl">
+        <div class="income-confirmation__label__text">2НДФЛ</div>
+      </label>
+      <input class="income-confirmation__input" type="radio" name="income" id="bank_form"/>
+      <label class="income-confirmation__label" for="bank_form">
+        <div class="income-confirmation__label__text">Форма банка</div>
+      </label>
+      <input class="income-confirmation__input" type="radio" name="income" id="no_way_to_confirm"/>
+      <label class="income-confirmation__label" for="no_way_to_confirm">
+        <div class="income-confirmation__label__text">Никак</div>
+      </label>
+      <div class="line"></div>
+    </div>
+    <div class="income-confirmation__description">
+      <p>
+        У вас полностью “белый” доход, что обычно обеспечивает самые выгодные предложения банков.
+      </p>
+      <p>
+        Если, существенная часть ваших доходов  не отражена в 2НДФЛ -  вы можете рассмотреть справку по форме банка, как один из вариантов подвтерждения дохода.
+      </p>
+    </div>
+  </div>
+  <nav class="navigation">
+    <a href="#" class="navigation__button navigation__button-back">Назад</a>
+    <a href="#" aria-disabled="true" class="navigation__button navigation__button-forward">Вперед</a>
+  </nav>
+</body>
+</html>

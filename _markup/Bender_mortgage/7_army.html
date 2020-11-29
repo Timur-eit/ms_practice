@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Отношение к воинской службе</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="3_about_yourself_style.css">
+  <style>
+  </style>
+</head>
+<body>
+  <div class="header">
+    <button class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+    </button>
+    <div class="header__logo">
+      <img class="header__image" src="logo.png" width="32" height="38" alt="логотипа Рога и Копыта">
+      <h1 class="header__title">Рога и Копыта</h1>
+    </div>
+  </div>
+  <div class="question">
+    ?USER_NAME?, расскажите про ваше отношение к воинской службе
+  </div>
+  <div class="general-input">
+    <label class="general-input__label" for="army-input">Ваш статус военнообязанного</label>
+    <div class="general-input__field">
+      <select class="general-input__field-input" name="army" id="army-input">
+        <option value="cilian">Невоеннобязанный</option>
+        <option value="not-serve">Не служил</option>
+        <option value="postone">Отсрочка от службы</option>
+        <option value="military">Военнослужащий</option>
+        <option selected value="reserved-retired">Запас или в отставке</option>
+      </select>
+      <div class="general-input__field-line"></div>
+    </div>
+  </div>
+  <nav class="navigation">
+    <a href="#" class="navigation__button navigation__button-back">Назад</a>
+    <a href="#" class="navigation__button navigation__button-forward red-edition">Далее</a>
+  </nav>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- <output></output>
+  <button type="button">+</button> -->
+
+    <output></output>
+    <button type="button">+</button>
+
+  <script>
+    // IIFE
+    (() => {
+      const output = document.querySelector('output');
+      const button = document.querySelector('button');
+
+      output.textContent = localStorage.getItem('children') ?? '0';
+
+      function plusOne() {
+        output.textContent = +output.textContent + 1;
+        localStorage.setItem('children', output.textContent);
+      }
+      
+      button.addEventListener('click', plusOne);
+
+      // nullish coalescing
+      window.addEventListener('storage', () => {
+        output.textContent = localStorage.getItem('children') ?? '0';
+      });
+
+    //   function getRandomNumber(min, max) {
+    //       let rand = min + Math.random() * (max + 1 - min);
+    //       return Math.floor(rand);
+    //   }
+
+      
+    //   function randomColor() {        
+    //     let R = getRandomNumber(0, 255);
+    //     let G = getRandomNumber(0, 255);
+    //     let B = getRandomNumber(0, 255);
+        
+    //     return `rgb(${R}, ${G}, ${B})`;
+    //   }
+
+    //   window.addEventListener('resize', () => {
+    //     document.body.style.backgroundColor = randomColor();
+    //   });
+    })()
+
+  </script>
+</body>
+</html>

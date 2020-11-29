@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Формы часть 2</title>
+  <style>
+    .half-width {
+    display: inline-block;
+    width: 50%;
+    margin-right: -4px;
+    }
+
+    .attention-medium {
+      color: white;
+      background-color: blue;
+      font-size: large;
+    }
+
+    div {
+      margin: 10px;
+    }
+
+    input,
+    output {
+    padding: 2px 5px;
+    
+    font-family: "Roboto", sans-serif;
+    vertical-align: middle;
+
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    }
+
+
+    output {
+    display: inline-block;
+    width: 30px;
+    height: 20px;
+    margin: 0 5px 10px;
+    text-align: center;
+    /* background-color: blue;
+    color: white; */
+    }
+
+    .output-area {
+    vertical-align: top;
+    } 
+
+  </style>
+</head>
+<body>
+  <h2>Формы часть 2</h2>
+  
+  <!-- Обязательные для заполения поля -->
+  <div>    
+    <form action="https://echo.htmlacademy.ru/courses" method="post">
+      <label for="input-field">Обязательное поле для заполения</label>
+      <input name="input-field-require" type="text" required id="input-field">
+      <input type="submit">
+      <!-- Эта проверка работает на клиентской части и упрощает валидацию форм.
+      Но всегда нужно проверять отправленные данные и на стороне сервера. -->
+    </form>
+  </div>
+
+  <!-- Ввод даты и времени -->
+  <div>
+    <label for="date">Дата</label>    
+    <input type="date" name="date">
+    <!-- проверить поддержку браузера https://caniuse.com/#feat=input-datetime -->
+    <!-- Если браузер не поддерживает поле для ввода даты / времени, то вместо него отображается обычное текстовое поле. -->
+    <label for="time">Время</label>
+    <input type="time" name="time">
+    <!-- https://caniuse.com/#feat=input-datetime -->
+  </div>
+
+  <!-- Дата с плейсхолдером -->
+  </div>
+    <div class="half-width">
+      <label for="arrival_date">Дата въезда</label>
+      <input type="text" name="arrival_date" id="arrival_date" placeholder="В формате дд-мм-гггг" onfocus="(this.type='date')" onblur="(this.type='text')">
+    </div>
+  </div>
+
+  <!-- Списко возможных значений
+  https://caniuse.com/#feat=datalist -->
+  <div class="half-width">
+    <label for="dish">Блюдо</label>
+    <input type="text" id="dish" name="dish" list="dishes">
+    <datalist id="dishes">
+      <option value="Креветки"></option>
+      <option value="Рыба"></option>
+      <option value="Икра"></option>
+    </datalist>
+
+    <!-- Числа -->
+    <div>
+      <label for="amount">Числа</label>
+      <input type="number" name="amount" id="amount" min="5" max="50" step="5">
+    </div>
+
+    <!-- Поле поиска -->
+    <!-- Группировка полей <fieldset> -->
+    <div>
+      <form action="https://echo.htmlacademy.ru/courses" method="post">
+        <fieldset>
+          <legend>Поиск города</legend>
+          <label for="search">Название города</label>
+          <input type="search" name="search" id="search">
+          <div class="">
+            <input type="submit" value="Забронировать">
+          </div>
+        </fieldset>
+      </form>
+    </div>
+
+
+    <!-- Автофокус
+    https://caniuse.com/#feat=autofocus -->
+    <div>
+      <label class="attention-medium" for="autofocus-field">Автофокус</label>
+      <input type="text" id="autofocus-field" autofocus>
+    </div>
+
+    <!-- Диапазон значений -->
+    <div>
+      <input type="range" min="1" max="14" step="1">
+    </div>
+    
+    <!-- Область для вывода результата -->
+    <!-- http://html5test.com/compare/feature/form.output.element/form-output-element.html -->
+    <div>
+      <form oninput="daysoutput.value=dayscount.value">
+        <div>
+          <label for="dayscount">Количество дней</label>
+          1 <input type="range" id="dayscount" name="dayscount" min="1" max="14" step="1"> 14
+        </div>
+        <div class="half-width output-area">
+          <label>Отображение количества дней</label>
+          <output name="daysoutput"></output>
+        </div>
+      </form>
+    </div>
+
+    
+    <!-- Паттерные значений полей
+    https://caniuse.com/#feat=input-pattern -->
+    <div>
+      <form action="https://echo.htmlacademy.ru/courses" method="post">
+        <fieldset>
+          <legend>Заявление на получение визы</legend>
+          <label for="passport">Номер паспорта</label>
+          <p>Введите серию и номер паспорта через пробел</p>
+          <input type="text" id="passport" name="passport" required pattern="[0-9]{4} [0-9]{6}" placeholder="XXXX XXXXXX">          
+          <!-- регулярное выражение 4 и 6 цифры -->
+          <br>
+          <br>
+          <label for="tel">Номер телефона</label>
+          <p>Введите номер телефона в формате 7XXXXXXXXXX</p>
+          <input type="tel" name="tel" required pattern="[0-9]{1}[0-9]{3}[0-9]{3}[0-9]{4}" value="7">
+        </fieldset>
+        <input type="submit" value="Оформить">
+      </form>
+    </div>
+
+
+    <!-- Поле для ввода email
+    http://html5test.com/compare/feature/form.email.element/form-email-validation.html
+
+    Поле для ввода адресов сайтов
+    http://html5test.com/compare/feature/form.url.element/form-url-validation.html -->
+    <div>
+      <form action="https://echo.htmlacademy.ru/courses" method="post">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email" required>
+        <br>
+        <label for="url">Личный сайт</label>
+        <input type="url" name="url" required>
+      </form>
+    </div>
+
+
+    <!-- Поле для выбора цвета
+    https://caniuse.com/#feat=input-color -->
+    <div>
+      <form action="https://echo.htmlacademy.ru/courses" method="post"></form>
+      <label for="color">Выберите цвет</label>
+      <input type="color" id="color" name="color">
+    </div>
+    
+    
+    <!-- Группировка элементов списка -->
+    <div>
+      <label for="food">Любимая еда</label>
+      <select id="food" name="food">
+        <!-- атрибут multiple -->
+        <optgroup label="Блюда">
+          <option value="meat">Мясо</option>
+          <option value="fish">Рыба</option>
+          <option value="chi">Курочка</option>
+          <option value="ind">Индейка</option>
+          <option value="mice">Мыши</option>
+        </optgroup>
+        <optgroup label="Напитки">
+          <option value="milk">Молоко</option>
+          <option value="kef">Кефир</option>
+          <option selected value="water">Вода</option>
+          <option value="smet">Сметана</option>
+        </optgroup>
+      </select>
+    </div>
+
+    <!-- Запрет на редактирование поля -->
+    <div>
+      <input type="text" value="Какие-то данные" readonly>
+      <!-- можно копировать данные, данные отправляются на сервер -->
+      <input type="text" value="Какие-то данные" disabled>
+      <!-- Нельза навести фокус, данные не отправляются на сервер -->
+    </div>
+
+    <!-- Управление автозаполнением полей -->
+    <div>
+      <input type="text" autocomplete="off">
+    </div>
+
+    <!-- Последовательность переключений tab -->
+    <div>
+      <fieldset>
+        <input type="text" tabindex="1">
+        <p>
+          В качестве значения может использоваться любое целое положительное число. Значения выстраиваются последовательно и переход между элементами происходит от меньшего значения к большему.
+          Если представлено отрицательное значение — элемент может быть выделен, однако не участвует в последовательной навигации.
+          Если представлен 0 — элемент может быть выделен и достигнут с помощью последовательной навигации, однако порядок навигации определён платформой.
+          Из соображений доступности не рекомендуется менять порядок навигации по полям ввода по умолчанию.
+        </p>
+      </fieldset>
+    </div>
+
+    <!-- Запись данных в локальное хранилище -->
+    <script>
+      // if (window.localStorage) {
+      //   var elements = document.querySelectorAll('[name]');
+
+      //   for (var i = 0, length = elements.length; i < length; i++) {
+      //     (function(element) {
+      //       var name = element.getAttribute('name');
+
+      //       element.value = localStorage.getItem(name) || element.value;
+
+      //       element.onkeyup = function() {
+      //         localStorage.setItem(name, element.value);
+      //       };
+      //     })(elements[i]);
+      //   }
+      // }
+    </script>
+
+</body>
+</html>

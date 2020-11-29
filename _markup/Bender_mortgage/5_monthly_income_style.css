@@ -1,0 +1,87 @@
+.income-confirmation {
+  /* width: 100%; */
+  border: 1px #F2F2F2 solid;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0 26px;
+  padding: 0 16px;
+  
+
+
+}
+
+.line {
+  width: auto;
+  text-align: center;
+  height: 1px;
+  background-color: black;
+  border-radius: 1px;
+  background: linear-gradient(90deg, #ccc, #c0c0c0, #ccc);
+}
+
+.income-confirmation__input {
+  display: inline-block;
+  display: none;
+  /* padding: 0 32px; */
+}
+
+.income-confirmation__label {
+  height: 89px;
+  width: 30%;
+  display: inline-block;
+  color: gray;
+  background: var(--confirmation-pic) no-repeat;
+  background-position: center top 12px;
+  /* z-index: 100; */
+}
+
+.income-confirmation__label[for="ndfl"] {
+  --confirmation-pic: url(./images/income_2ndfl.svg);
+}
+
+.income-confirmation__label[for="bank_form"] {
+  --confirmation-pic: url(./images/income_bank_form.svg);
+}
+
+.income-confirmation__label[for="no_way_to_confirm"] {
+  --confirmation-pic: url(./images/income_noway.svg);
+}
+
+.income-confirmation__label__text {
+  margin: 65px 0 0 0;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+}
+
+.income-confirmation__input:checked + .income-confirmation__label {
+  padding: 10px;
+  margin: -10px;
+  border-radius: 8px;
+  box-shadow: 0px 12px 32px rgba(0, 0, 0, 0.15);
+  color: #BC0000;
+  background: var(--confirmation-pic-red) no-repeat;
+  background-position: center top 22px;
+  background-color: white;
+}
+
+.income-confirmation__label[for="ndfl"] {
+  --confirmation-pic-red: url(./images/income_2ndfl_red.svg);
+}
+
+.income-confirmation__label[for="bank_form"] {
+  --confirmation-pic-red: url(./images/income_bank_form_red.svg);
+}
+
+.income-confirmation__label[for="no_way_to_confirm"] {
+  --confirmation-pic-red: url(./images/income_noway_red.svg);
+}
+
+.income-confirmation__description {
+  font-family: "latoitalic";
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 18px;
+  color: gray;
+  padding: 0 32px;
+}

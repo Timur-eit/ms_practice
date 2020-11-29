@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="style.css">
+  <title>Как вас зовут?</title>
+</head>
+<body>
+  <div class="header">
+    <button class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+    </button>
+    <div class="header__logo">
+      <img class="header__image" src="logo.png" width="32" height="38" alt="логотипа Рога и Копыта">
+      <h1 class="header__title">Рога и Копыта</h1>
+    </div>
+  </div>
+  <div class="question">
+    Как вас зовут?
+  </div>
+  <div class="note">
+    <section>
+      Заполните как в паспорте, это важно для банков
+    </section>
+  </div>
+  <div class="general-input">
+    <label class="general-input__label" for="surname-input">Фамилия</label>
+    <div class="general-input__field">
+      <input class="general-input__field-input" name="surname" type="text" id="surname-input" value="Алексеев" >
+      <div class="general-input__field-line"></div>
+    </div>
+    <label class="general-input__label" for="name-input">Имя</label>
+    <div class="general-input__field">
+      <input class="general-input__field-input" name="name" type="text" id="name-input" value="Алексей" >
+      <div class="general-input__field-line"></div>
+    </div>
+    <label class="general-input__label" for="middle-name-input">Имя</label>
+    <div class="general-input__field">
+      <input class="general-input__field-input" name="middle-name" type="text" id="middle-name-input" value="Владимирович">
+      <div class="general-input__field-line"></div>
+    </div>
+  </div>
+  <nav class="navigation">
+    <a href="#" class="navigation__button navigation__button-back invisible">Назад</a>
+    <a href="#" class="navigation__button navigation__button-forward red-edition">Далее</a>
+  </nav>
+</body>
+</html>

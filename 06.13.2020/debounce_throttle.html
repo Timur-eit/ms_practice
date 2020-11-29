@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+  <h1>0</h1>
+  <button>click</button>
+  
+
+  <script>
+    const btn = document.querySelector('button');
+    const h1 = document.querySelector('h1');
+    let counter = 0;
+    function handleClick() {
+      h1.textContent = ++counter;
+    }
+
+    function debounce(fn, ms) {
+      let timeId;
+      return function() {
+        clearTimeout(timeId);
+        timeId = setTimeout(fn, ms);
+      };
+    }
+
+    function throttle(fn, ms) {
+      let wasInvoke = false;
+      
+      return function() {
+        if (wasInvoke) {
+          return;
+        }
+        fn();
+        wasInvoke = true;
+        setTimeout(() => wasInvoke = false, ms);
+      }
+    }
+    
+    // const debouncedHandleClick = debounce(handleClick, 1000);
+    // btn.addEventListener('click', debouncedHandleClick);
+    // console.log(btn);
+
+    const thtrotleHandleClick = throttle(handleClick, 1000);
+    btn.addEventListener('click', thtrotleHandleClick);
+
+    // function printDate(e) {
+    //   console.log(millisecondsToHuman(+new Date));
+    // }
+
+    // function millisecondsToHuman(ms) {
+    //   const milliseconds = ms % 1000;
+    //   const seconds = Math.floor((ms / 1000) % 60);
+    //   const minutes = Math.floor((ms / 1000 / 60) % 60);
+    //   const hours = Math.floor((ms  / 1000 / 3600 ) % 24)
+
+    //   return [
+    //     hours.toString().padStart(2, 0),
+    //     minutes.toString().padStart(2, 0),
+    //     seconds.toString().padStart(2, 0),
+    //     milliseconds.toString().padStart(3, 0)
+    //   ].join(':');
+    // }
+
+
+    // window.addEventListener('mousemove', throttle(printDate, 500));
+  </script>
+</body>
+</html>

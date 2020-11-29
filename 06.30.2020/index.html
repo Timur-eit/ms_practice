@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <script>
+    const element = document.querySelector('h1');
+    element.textContent = "Hello";
+    console.log(element);
+    let i = 0;
+    const id = setInterval(() => {
+      element.textContent = i++;
+      document.body.style.background = "#" + Math.floor(0x1000000 * Math.random()).toString(16).padStart(6, 0);
+      if (i > 1000) {
+        clearInterval(id);
+      }
+    }, 16);
+
+    // function f() {
+    //   console.log('hello!')
+    // }
+
+    // const id = setTimeout(f, 2000);
+
+    // clearTimeout(id);
+
+  </script>
+</body>
+</html>

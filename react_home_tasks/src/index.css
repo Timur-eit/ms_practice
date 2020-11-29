@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Background */
+
+.color-panel {
+  display: flex;
+  width: 500px;
+  /* margin: 10px; */
+  padding: 10px;
+  background-color: darkgray;
+  color: white;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ======== */
+/* Mortgage */
+/* ======== */
+
+.comparison {
+  width: 800px;
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border: 1px solid #E4E4E4;
+}
+
+.row {
+  display: flex;
+}
+
+.row:hover {
+  background-color: red;
+}
+
+.upper {
+  border-bottom: 1px solid #E4E4E4;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 2px 2px 0px 0px;
+  background-color: red;
+  /* ??? */
+}
+
+
+.table:nth-child(2n) {
+  background: #eef;
+}
+
+
+.cell {
+  padding: 5px;
+  min-height: 40px;
+  /* min-width: 25%;   */
+}
+
+.row-names {
+  text-align: start;
+  min-width: 25%;
+  z-index: 1;
+  background-color: white;
+  border-right: 1px solid #E4E4E4;
+}
+
+.product {
+  min-width: 25%;
+  transition-property: transform;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+  background-color: white;
+  border-right: 1px solid #E4E4E4;
+}
+
+.product:nth-child(2n) {
+  background: #eef;
+}
+
+.realty-type {
+  min-height: 90px;
+}
+
+.display-basic-button {
+  width: 16px;
+  height: 16px;
+  background-image: url('./Mortgage_Products/img/arrow.svg');
+  /* transform: scale(1, -1);   */
+  /* transform: scale(-1, 1); */
+}
+
+
+.programmes {
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons-blocks {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.display-terms-button {
+  width: 16px;
+  height: 16px;
+  background-image: url('./Mortgage_Products/img/arrow.svg');
+}
+
+/* ******* */
+/* WebHelp */
+/* ******* */
+
+.entity a {
+  text-decoration: none;
+}
+
+.title {
+  font-size: 15px;  
+  display: flex;
+  align-items: center;
+  
+}
+
+.pages {
+  background-color: lightcyan;
+}
+
+.page {
+  /* display: block; */
+  /* margin-left: 1em; */
+}
+
+.title__button {
+  width: 8px;
+  height: 5px;
+  border: none;
+  background: url('./WebHelp/img/button_collapsed.svg') no-repeat center;
+}
+
+.button-expanded {
+  background: url('./WebHelp/img/button_expanded.svg') no-repeat center;
+}
+
+li {
+  list-style-type: none;
+}

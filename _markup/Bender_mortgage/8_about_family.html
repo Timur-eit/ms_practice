@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="8_about_family.css">
+  <title>Расскажите о семье</title>
+</head>
+<body>
+  <div class="header">
+    <button class="menu">
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+      <div class="menu__line"></div>
+    </button>
+    <div class="header__logo">
+      <img class="header__image" src="logo.png" width="32" height="38" alt="логотипа Рога и Копыта">
+      <h1 class="header__title">Рога и Копыта</h1>
+    </div>
+  </div>
+  <div class="question">
+    Расскажите о семье
+  </div>
+  <div class="general-input">
+    <label class="general-input__label" for="family-input">Семейное положение</label>
+    <div class="general-input__field">
+      <select class="general-input__field-input" name="army" id="family-input">
+        <option selected value="married">Женат</option>
+        <option value="single">Холост</option>
+        <option value="divorced">Разведен</option>
+        <option value="widower">Вдовец</option>
+        <option value="civil-marriage">В гражданском браке</option>
+        <option value="married-contract">Женат, есть брачный договор</option>
+      </select>
+      <div class="general-input__field-line"></div>
+    </div>
+  </div>
+  
+  <div class="general-input__label children">Дети младше 18 лет</div>
+  <div class="children-number">
+    <div class="children-number__button" id="button_minus">-</div>
+    <div class="children-number__output">
+      <output class="children-number__output__field">0</output>
+      <div class="general-input__field-line"></div>      
+    </div>
+    <div class="children-number__button" id="button_plus">+</div>
+  </div>
+  
+  <div class="family">
+    <label class="check">
+      <input class="check__input" type="checkbox" checked>
+      <span class="check__box"></span>
+      <div class="check__label">
+        <div class="chech__label__header">Ребенок родился в 2018 или позже</div>
+        <div class="chech__label__note">В этом случае вам доступны программы с господдержкой</div>
+      </div>
+    </label>
+    <label class="check">
+      <input class="check__input" type="checkbox">
+      <span class="check__box"></span>
+      <div class="check__label">
+        <div class="chech__label__header">У ребенка инвалидность</div>
+        <div class="chech__label__note">В этом случае вам доступны программы с господдержкой</div>
+      </div>
+    </label>
+  </div>
+
+  <nav class="navigation">
+    <a href="#" class="navigation__button navigation__button-back">Назад</a>
+    <a href="#" class="navigation__button navigation__button-forward red-edition">Далее</a>
+  </nav>
+  <script>
+    (() => {
+      const output = document.querySelector('output');
+      const plus = document.getElementById('button_plus');
+      const minus = document.getElementById('button_minus');
+
+      function plusOne() {
+        output.textContent = +output.textContent + 1;
+      }
+
+      function minusOne() {
+        if (+output.textContent > 0) {
+          output.textContent = +output.textContent - 1;
+        }
+      }
+
+      plus.addEventListener('click', plusOne);
+      minus.addEventListener('click', minusOne);
+    })()
+  </script>
+</body>
+</html>

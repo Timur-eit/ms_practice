@@ -1,0 +1,1 @@
+const always = n => () => n;

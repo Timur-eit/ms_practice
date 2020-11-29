@@ -1,0 +1,75 @@
+.banks {
+  padding: 0 32px;
+}
+
+.banks__input {
+  display: none;
+}
+
+.banks__title {
+  height: 48px;
+  font-size: 16px;
+  text-align: 22px;
+  padding: 15px 0 11px 42px;
+  display: block;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* background: var(--bankLogo) no-repeat left 15px center; */
+  background: var(--bankLogo) no-repeat left 0px center;
+}
+
+.banks__title[for="sberbank"] {
+  --bankLogo: url(./images/sber_logo.svg);
+}
+
+.banks__title[for="alpha"] {
+  --bankLogo: url(./images/alfa_logo.svg);
+}
+
+.banks__title[for="vtb"] {
+  --bankLogo: url(./images/vtb_logo.svg);
+}
+
+.banks__title[for="raif"] {
+  --bankLogo: url(./images/raif_logo.svg);
+}
+
+.banks__title[for="gazprom"] {
+  --bankLogo: url(./images/gazprom_logo.svg);
+}
+
+.banks__title[for="otkritie"] {
+  --bankLogo: url(./images/otkritie_logo.svg);
+}
+
+.banks__title[for="rosbank"] {
+  --bankLogo: url(./images/rosbank_logo.svg);
+}
+
+.banks__title[for="rosselkhoz"] {
+  --bankLogo: url(./images/rosselkhoz_logo.svg);
+}
+
+.banks__title[for="yunicredit"] {
+  --bankLogo: url(./images/yunicredit_logo.svg);
+}
+
+.banks__title[for="promsvyaz"] {
+  --bankLogo: url(./images/promsvyaz_logo.svg);
+}
+
+.banks__title[for="another_bank"] {
+  --bankLogo: url(./images/another_bank.svg);
+}
+
+.banks__title[for="cash"] {
+  --bankLogo: url(./images/cash_logo.svg);
+}
+
+.banks__input:checked + .banks__title {
+  margin-left: -16px;
+  padding-left: 58px;
+  background: var(--bankLogo) no-repeat left 16px center,
+              url(./images/bank_card.svg) no-repeat right 15px center,
+              #F1F2F4;
+}
